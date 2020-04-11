@@ -11,13 +11,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                def SSH_IP = '192.144.226.143';
+                def sship = '192.144.226.143'
                 echo 'Testing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Run222ning ${env.WORKSPACE}"
                 echo "Run2211ning $SSH_PWD"
                 sh '''
-                    ssh://ubuntu:$SSH_PWD@$SSH_IP:22
+                    ssh://ubuntu:$SSH_PWD@$sship:22
                     ls -lah
                 '''
             }
