@@ -20,6 +20,7 @@ pipeline {
                 sh '''
                   echo $PWD
                   ls -al
+                  docker cp jenkins-tutorial:$PWD /home/ubuntu/app/projects
                  
                 '''
             }
