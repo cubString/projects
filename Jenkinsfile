@@ -18,7 +18,9 @@ pipeline {
                 echo "Run222ning ${env.WORKSPACE}"
                 echo "Run2211ning $SSH_PWD"
                 sh '''
-                  ssh ubuntu@$SSH_IP -p 22  -tt
+                  echo $PWD
+                  ls -al
+                 
                 '''
             }
         }
