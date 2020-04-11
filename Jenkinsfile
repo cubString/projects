@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+        BITBUCKET_COMMON_CREDS = credentials('ccaa48c3-be5c-4535-8225-afa9c171395c')
     }
     stages {
         stage('Build') {
@@ -14,7 +13,8 @@ pipeline {
             steps {
                 echo 'Testing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Run22ning ${env.WORKSPACE} "
+                echo "Run222ning ${env.WORKSPACE}"
+                echo "Run2211ning $BITBUCKET_COMMON_CREDS"
             }
         }
         stage('Deploy') {
