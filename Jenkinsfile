@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                def SSH_IP = 192.144.226.143;
+                def SSH_IP = '192.144.226.143';
                 echo 'Testing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Run222ning ${env.WORKSPACE}"
