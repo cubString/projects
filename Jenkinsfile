@@ -18,7 +18,7 @@ pipeline {
                 echo "Run222ning ${env.WORKSPACE}"
                 echo "Run2211ning $SSH_PWD"
                 sh '''
-                   docker ps -a
+                  ssh ubuntu@$SSH_IP -p 22
                 '''
             }
         }
