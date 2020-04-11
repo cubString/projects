@@ -18,6 +18,7 @@ pipeline {
                 echo "Run222ning ${env.WORKSPACE}"
                 echo "Run2211ning $SSH_PWD"
                 sh '''
+                    #!/bin/bash -ilex
                     source /etc/profile
                     ssh://ubuntu:$SSH_PWD@$SSH_IP:22
                     ls -lah
