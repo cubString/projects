@@ -1,3 +1,3 @@
 <?php
 
-echo 'hellow php';
+echo 'hellow php！';
