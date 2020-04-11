@@ -12,11 +12,14 @@ pipeline {
         }
         stage('Test') {
             steps {
+
                 echo 'Testing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Run222ning ${env.WORKSPACE}"
                 echo "Run2211ning $SSH_PWD"
                 sh '''
+                    source ~/.bash_profile
+                    source /etc/profile
                     ssh://ubuntu:$SSH_PWD@$SSH_IP:22
                     ls -lah
                 '''
