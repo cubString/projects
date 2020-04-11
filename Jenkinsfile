@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        BITBUCKET_COMMON_CREDS = credentials('ccaa48c3-be5c-4535-8225-afa9c171395c')
+        SSH_PWD = credentials('1bc309fe-0b1e-4b4f-a0ce-9cc8ae645467')
     }
     stages {
         stage('Build') {
@@ -11,10 +11,15 @@ pipeline {
         }
         stage('Test') {
             steps {
+                def SSH_IP = 192.144.226.143;
                 echo 'Testing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Run222ning ${env.WORKSPACE}"
-                echo "Run2211ning $BITBUCKET_COMMON_CREDS"
+                echo "Run2211ning $SSH_PWD"
+                sh '''
+                    ssh://ubuntu:$SSH_PWD@$SSH_IP:22
+                    ls -lah
+                '''
             }
         }
         stage('Deploy') {
