@@ -19,9 +19,6 @@ pipeline {
                 echo "Run2211ning $SSH_PWD"
                 sh '''
                   echo $PWD
-                  ls -al
-                  docker cp 6bb86e06ca1a:$PWD /home/ubuntu/app/projects
-                 
                 '''
             }
         }
