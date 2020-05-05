@@ -1,5 +1,5 @@
 <?php
 
-
-echo 'wxIndex';
-exit;
+phpinfo();
+// echo 'wxIndex';
+// exit;
