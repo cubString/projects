@@ -33,15 +33,15 @@ pipeline {
                  echo "env: ${env.BRANCH_NAME}"
                    sh '''
                       if [ "$BRANCH_NAME"  = "dev" ];then
-                         cd /data/www/dev/
+                         cd /root/www/dev/
                          git pull origin dev:dev
                       fi
                       if [ "$BRANCH_NAME"  = "test" ];then
-                          cd /data/www/test/
+                          cd /root/www/test/
                          git pull origin test:test
                       fi
                       if [ "$BRANCH_NAME"  = "master" ];then
-                         cd /data/www/master/
+                         cd /root/www/master/
                          git pull origin master:master
                       fi
 
