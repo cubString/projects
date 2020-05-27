@@ -10,7 +10,7 @@ class Index extends BaseController
     {
 		// $data = Db::name('user')->select();
 		// app('Db')::table('s_user')->select();
-		Db::table('s_user')->select();
+		$data = Db::table('s_user')->select();
 		dump($data);exit;
     }
 
