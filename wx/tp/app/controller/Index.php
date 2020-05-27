@@ -11,6 +11,8 @@ class Index extends BaseController
     {
 		$data = Db::table('s_user')->select();
 
+			var_dump($data);
+			exit;
 		 // 模板变量赋值
 		View::assign('name','ThinkPHP');
 		// 模板输出
