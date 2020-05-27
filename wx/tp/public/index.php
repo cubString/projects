@@ -11,7 +11,11 @@
 
 // [ 应用入口文件 ]
 namespace think;
+var_dump(__DIR__);
+var_dump(__DIR__.'/../vendor/autoload.php');
+var_dump(is_file(__DIR__.'/../vendor/autoload.php');
 
+exit;
 require __DIR__ . '/../vendor/autoload.php';
 
 echo "isOK1";exit;
