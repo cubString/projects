@@ -8,7 +8,8 @@ class Index extends BaseController
 {
     public function index()
     {
-		$data = Db::name('user')->select();
+		// $data = Db::name('user')->select();
+		Db::table('s_user')->select();
 		dump($data);exit;
     }
 
