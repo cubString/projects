@@ -30,6 +30,24 @@ pipeline {
             }
             steps {
                 echo 'Deploying....'
+                 echo "env: ${env.BRANCH_NAME}"
+                   sh '''
+                      if [ "$BRANCH_NAME"  = "dev" ];then
+                         cd /data/www/dev/
+                         git pull origin dev:dev
+                      fi
+                      if [ "$BRANCH_NAME"  = "test" ];then
+                          cd /data/www/test/
+                         git pull origin test:test
+                      fi
+                      if [ "$BRANCH_NAME"  = "master" ];then
+                         cd /data/www/master/
+                         git pull origin master:master
+                      fi
+
+                      echo "OK！";
+
+                   '''
             }
         }
     }
