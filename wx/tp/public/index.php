@@ -17,7 +17,7 @@ require __DIR__ . '/../vendor/autoload.php';
 echo "isOK1";
 // 执行HTTP应用并响应
 $http = (new App())->http;
-echo "isOK2";
+echo "isOK2";exit;
 $response = $http->run();
 echo "isOK3";
 $response->send();
